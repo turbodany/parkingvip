@@ -1,0 +1,47 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light navbar-float">
+    <div class="container">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><span class="text-primary">VIP PARKING</span></a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarContent">
+            <ul class="navbar-nav ml-lg-4 pt-3 pt-lg-0">
+                
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Administrador"))
+                {
+                    <a class="nav-link" asp-controller="Vehicules" asp-action="Index">VEHICULOS</a> 
+                    <a class="nav-link" asp-controller="Empleados" asp-action="Index">Empleados</a>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="About">QUIENES SOMOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Services">NUESTRO SERVICIOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Blog">NOTICIAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Contactenos">CONTACTENOS</a>
+                    </li>
+                }
+            </ul>
+
+            <div class="ml-auto">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a class="btn btn-outline-primary rounded-pill" asp-area="" asp-controller="Account" asp-action="ChangeUser">@User.Identity.Name</a>
+                    <a class="btn btn-outline-primary rounded-pill" asp-area="" asp-controller="Account" asp-action="Logout">Cerrar Sesión</a>
+                }
+                else
+                {
+                    <a class="btn btn-outline-primary rounded-pill" asp-area="" asp-controller="Account" asp-action="Login">Iniciar Sesión</a>
+                }
+            </div>
+        </div>
+    </div>
+</nav>

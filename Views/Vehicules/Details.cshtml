@@ -1,0 +1,53 @@
+﻿@model Parking_VIP.Data.Entities.Vehiculo
+
+@{
+    ViewData["Title"] = "Details";
+    
+}
+
+<div>
+    <h4>Vehiculo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Placa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Placa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.H_entrada)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.H_entrada)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.H_salida)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.H_salida)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.N_parqueadero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.N_parqueadero)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-primary">Editar</a> 
+    <a asp-action="Index" class="btn btn-outline-warning">Regresar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Parking_VIP.Data.Entities.Vehiculo>
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary">Ingresar Vehiculo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Placa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.H_entrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.H_salida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.N_parqueadero)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Placa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.H_entrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.H_salida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.N_parqueadero)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-success">Detalles</a> 
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

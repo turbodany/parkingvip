@@ -1,0 +1,51 @@
+﻿    
+@{
+    ViewData["Title"] = "Login";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="copyright" content="Ap System, https://apsystem.com.co">
+    
+    <title>@ViewData["Title"] -VIP PARKING</title>
+    
+    <link href="~/css/animate.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/maicons.css" rel="stylesheet" />
+    <link href="~/css/owl.carousel.css" rel="stylesheet" />
+    <link href="~/css/theme.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" rel="stylesheet" asp-append-version="true" />
+    
+</head>
+<body>
+    <header>
+        <partial name="_PartialViewHeader" />
+    </header>
+
+    <main role="main" style="margin-top:200px; margin-left:60px" class="pb-3">
+        @RenderBody()
+    </main>
+
+    <footer class="page-footer">
+        <partial name="_FooterPartial" />
+    </footer> <!-- .page-footer -->
+
+    <script src="~/js/jquery-3.5.1.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.waypoints.min.js"></script>
+    <script src="~/js/jquery.animatenumber.min.js"></script>
+    <script src="~/js/google-maps.js"></script>
+    <script src="~/js/theme.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
